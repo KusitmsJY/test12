@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+
+
+check.dependsOn 'assembleDebugAndroidTest'
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -33,13 +36,31 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    // ...
+    // Firebase UI
+    // Used in FirebaseUIActivity.
+    implementation 'com.firebaseui:firebase-ui-auth:4.2.0'
 
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+
+    // Google Sign In SDK (only required for Google Sign In)
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+
+    //ㅎㅎ
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71"
+
+    //인증관련
     implementation 'com.firebaseui:firebase-ui-auth:4.0.0'
-
     // Required only if Facebook login support is required
     // Find the latest Facebook SDK releases here: https://goo.gl/Ce5L94
-
+    //implementation 'com.facebook.android:facebook-android-sdk:4.x'
+    // Required only if Twitter login support is required
+    // Find the latest Twitter SDK releases here: https://goo.gl/E5wZvQ
+    //implementation 'com.twitter.sdk.android:twitter-core:3.x'
 }
 //Add to tthe bottom of the file
 apply plugin: 'com.google.gms.google-services'
