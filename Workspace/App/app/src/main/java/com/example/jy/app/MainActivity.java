@@ -6,11 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
+
         // 화면 전환 - 인텐트 날리기 (startActivity)
         //     1. 다음 넘어갈 화면을 준비한다 (layout xml, java)
         //    2. AndroidManifest.xml 에 Activity 를 등록한다
