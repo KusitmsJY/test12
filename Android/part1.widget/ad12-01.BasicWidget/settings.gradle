@@ -1,0 +1,2 @@
+include ':st0viewattributes', ':st1textview', ':st2edittext', ':st3button', ':st4compoundbutton',
+        ':st5imageview', ':st7datetime', ':st8bar', ':st9scrollview'

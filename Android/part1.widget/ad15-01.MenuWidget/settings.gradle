@@ -1,0 +1,1 @@
+include ':st1drawermenu', ':st2preference', ':st3toolbar', ':st4actionbarmenu'

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">st3toolbar</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_search">searching</string>
+    <string name="action_favorite">favorite</string>
+    <string name="action_settings">settings</string>
+</resources>

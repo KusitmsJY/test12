@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FourButton</string>
+    <string name="btn1_title">구글 홈 페이지 열기</string>
+    <string name="btn2_title">119 응급 전화 걸기</string>
+    <string name="btn3_title">갤러리 열기</string>
+    <string name="btn4_title">끝내기</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    
+    <!-- 버튼이 눌렸을 때 Text의 색깔을 변경하기 위해서는 Color Selector -->
+    <color name="pressed_color">#FFFFFF</color>
+    <color name="normal_color">#FF00FF</color>
+</resources>

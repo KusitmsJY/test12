@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.compoundbutton.MainActivity">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+    
+                <!-- 기본 checkbox -->
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:text="안드로이드"/>
+                
+                <!-- selector 로 CheckBox 모양 바꾸하기  -->
+                <CheckBox
+                    android:id="@+id/check_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_selector"
+                    android:text="check" />
+                
+                <!-- checkbox 배경으로 이미지 설정하기 -->
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@drawable/checkbox_selector"
+                    android:text="checkbox" 
+                    style="?android:attr/buttonStyleSmall"/>
+
+            </LinearLayout>
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+    
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:gravity="left|center_vertical|fill_vertical|fill"
+                    android:text="Switch"/>
+        
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Switch"
+                    android:textOff="NO"
+                    android:textOn="YES"
+                    android:thumb="@drawable/toggle_selector"/>
+    
+            </LinearLayout>
+        
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                
+                <ToggleButton android:id="@+id/toggleButton"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="right"
+                              android:text="ToggleButton"/>
+                
+                <ToggleButton android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:checked="true"
+                              android:text="ToggleButton"
+                              android:textOff="NO"
+                              android:textOn="YES"
+                              android:background="@drawable/toggle_selector"  />
+                
+            </LinearLayout>
+        
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                
+                <RadioGroup
+                    android:id="@+id/rgpDirection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    
+                    <RadioButton
+                        android:id="@+id/rdoH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="가로"/>
+                    
+                    <RadioButton
+                        android:id="@+id/rdoV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="세로"/>
+                </RadioGroup>
+                
+                <RadioGroup
+                    android:id="@+id/rgpGravity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    
+                    <RadioButton
+                        android:id="@+id/rdoLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="왼쪽"/>
+                    
+                    <RadioButton
+                        android:id="@+id/rdoCenter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가운데"/>
+                    
+                    <RadioButton
+                        android:id="@+id/rdoRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오른쪽"/>
+                </RadioGroup>
+            </LinearLayout>
+        
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

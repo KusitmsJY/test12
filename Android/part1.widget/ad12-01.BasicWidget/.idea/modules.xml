@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ad12-01.BasicWidget.iml" filepath="$PROJECT_DIR$/ad12-01.BasicWidget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st0viewattributes/st0viewattributes.iml" filepath="$PROJECT_DIR$/st0viewattributes/st0viewattributes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st1textview/st1textview.iml" filepath="$PROJECT_DIR$/st1textview/st1textview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st2edittext/st2edittext.iml" filepath="$PROJECT_DIR$/st2edittext/st2edittext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st3button/st3button.iml" filepath="$PROJECT_DIR$/st3button/st3button.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st4compoundbutton/st4compoundbutton.iml" filepath="$PROJECT_DIR$/st4compoundbutton/st4compoundbutton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st5imageview/st5imageview.iml" filepath="$PROJECT_DIR$/st5imageview/st5imageview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st7datetime/st7datetime.iml" filepath="$PROJECT_DIR$/st7datetime/st7datetime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st8bar/st8bar.iml" filepath="$PROJECT_DIR$/st8bar/st8bar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st9scrollview/st9scrollview.iml" filepath="$PROJECT_DIR$/st9scrollview/st9scrollview.iml" />
+    </modules>
+  </component>
+</project>

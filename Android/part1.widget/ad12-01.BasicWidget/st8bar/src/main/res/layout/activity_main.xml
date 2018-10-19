@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    
+    
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="수평 프로그레스바 출력"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnProgressWheel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="원형 프로그레스바 출력"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnProgressLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로딩 프로그레스바 출력"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    
+    <Button
+        android:id="@+id/btnProgressDialogActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로그레스바 다이얼로그 액티비티 출력"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnProgressDialogCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로그레스바 커스텀 다이얼로그 출력"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

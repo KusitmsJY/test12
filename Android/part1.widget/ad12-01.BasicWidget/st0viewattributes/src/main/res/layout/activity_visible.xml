@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.android.button.VisibleActivity">
+    
+    
+    <Button
+        android:id="@+id/btn_visible_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼 1"/>
+    
+    <Button
+        android:id="@+id/btn_visible_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼 2"
+        android:visibility="invisible"/>
+    
+    <Button
+        android:id="@+id/btn_visible_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="버튼 3"/>
+    
+    <Button
+        android:id="@+id/btn_visible_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼 4"
+        android:visibility="gone"/>
+    
+    <Button
+        android:id="@+id/btn_visible_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="버튼 5"/>
+</LinearLayout>

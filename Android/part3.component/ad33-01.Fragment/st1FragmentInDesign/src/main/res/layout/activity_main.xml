@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.fragment.MainActivity">
+    
+    <fragment
+        android:id="@+id/fragmentone"
+        android:name="com.example.fragment.FragmentOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <fragment
+        android:id="@+id/fragmenttwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.fragment.FragmentTwo" />
+    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_image0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이미지 0" />
+        <Button
+            android:id="@+id/btn_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이미지 1" />
+        <Button
+            android:id="@+id/btn_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이미지 2" />
+    </LinearLayout>
+    
+    <fragment
+        android:id="@+id/fragmentthr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.example.fragment.FragmentThr" />
+    
+</LinearLayout>

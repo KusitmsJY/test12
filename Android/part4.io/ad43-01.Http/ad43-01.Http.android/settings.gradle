@@ -1,0 +1,7 @@
+include ':mylibrary', ':http'
+
+include ':st4paginglistview'
+include ':st5fileupload'
+include ':st6imageupload'
+include ':st7UploadFileToServer'
+

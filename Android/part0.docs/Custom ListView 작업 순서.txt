@@ -1,0 +1,11 @@
+Custom ListView 작업 순서.
+1. custom view xml 만들기
+2. model 클래스 만들기
+3. adapter 만들기.
+4. activity_main.xml 수정
+    디자인에 ListView  추가
+5. MainActivity.java 수정                     
+    5.1 위젯 선언                             6. Adapter 작업       
+    5.2 위젯 찾기                               6.1 데이터 만들기       
+    5.3 위젯 설정 : 리스너 만들기.              6.2 adapte 생성   
+    5.4 리스트뷰와 adapter 연결. <-------------------|

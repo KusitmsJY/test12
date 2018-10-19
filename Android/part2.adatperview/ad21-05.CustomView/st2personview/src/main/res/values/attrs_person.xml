@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 디자인 타임에서 CutsomView에 지정할 속성 3가지 설정하기.
+        1. ImageView(photo)에 넣을 속성 값.
+        2. TextView(name)에 넣을 속성 값.
+        3. TextView( age )에 넣을 속성 값.
+     -->
+    <declare-styleable name="PersonView">
+        <attr name="my_photo" format="reference" />
+        <attr name="my_name" format="string" />
+        <attr name="my_age" format="integer" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,142 @@
+﻿import android.content.Intent;  // 자동 import 안됨.
+
+
+Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse( "tel://119" ) );
+startActivity(i); // 새창 띄우기.
+
+
+Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse( "http://www.google.com") );
+startActivity(i); // 새창 띄우기.
+
+
+
+@Override
+protected void onClick(View v) {
+    // 새창 띄우기
+    Intent i = new Intent( /* context */ MainActivity.this  ,  /* class 이름 */ LoginActivity.class);
+    startActivityForResult(i,REQUEST_CODE_LOGIN);
+}
+
+
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+    super.onActivityResult(requestCode, resultCode, data);
+    
+    // requestCode == REQUEST_CODE_LOGIN
+    // resultCode  == RESULT_OK
+    // data   == 처리된 결과 정보가 들어 있다.
+
+    // 결과 확인
+    if( requestCode == REQUEST_CODE_LOGIN && resultCode == RESULT_OK ){
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+    }
+        boolean loginStatus = data.getBooleanExtra("LOGIN_STATUS", false);
+
+        // menu 보이고 감추기..
+
+    }
+}
+
+Context를 얻는 방법.
+1. getApplicationContext()   // 액티비티, Service.
+2. View.getContext()
+3. MainActivity.this         // 액티비티인 경우.
+4. getContext()              // 프래그먼트인 경우.
+
+
+inflation 하는 방법 2가지.
+                case R.id.btn1:
+                    
+                    break;
+LayoutInflater.from( MainActivity.this )
+              .inflate(R.layout.layout_sub1, parent, true);
+              
+LayoutInflater inflater = (LayoutInflater) getSystemService( LAYOUT_INFLATER_SERVICE);
+inflater.inflate(R.layout.layout_sub1, parent, true);
+
+// AlertDialog 로 출력하기
+AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+builder.setTitle( item.getDataItem01() );
+builder.setMessage( item.toString() );
+builder.setIcon( R.mipmap.ic_launcher );
+builder.setPositiveButton("확인", null);
+builder.show();
+
+
+Custom ListView 작업 순서.
+1. custom view xml 만들기
+2. model 클래스 만들기
+3. adapter 만들기.
+4. activity_main.xml 수정
+    디자인에 ListView  추가
+5. MainActivity.java 수정                     6. Adapter 작업    
+    5.1 위젯 선언                                 6.1 데이터 만들기     
+    5.2 위젯 찾기                                 6.2 adapter 생성         
+    5.3 위젯 설정 : 리스너 만들기.                6.3 adapter 리스너 만들기.
+                                                     |
+    6.4 리스트뷰와 adapter 연결. <-------------------|
+    
+7. Header View 추가.
+8. Footer View 추가.
+9. Diver 추가.    
+
+
+CustView init () 메서드 작업 순서
+// 1. Layout 관련 필수 설정.
+//    LinearLayout 인 경우는 orientation을 반드시 설정한다.
+// 2. inflation
+// 3. attrs 관련 설정.
+//    attrs로 정의한 속성값 가져와서 찾은 위젯에 값으로 설정.
+// 4. 위젯(리스너) 설정.
+
+
+
+Thread로 sleep 주기
+android.os.SystemClock.sleep( 1000 );       // 1초간 wait
+java.lang.Thread.sleep( 1000 ); // 1초간 wait
+
+
+
+// Wait 동안 ProgressDialog 보여 주기
+pdlg = new ProgressDialog(MainActivity.this);
+pdlg.setMessage("데이터 가져오는 중");
+pdlg.getWindow().setGravity(Gravity.TOP);
+pdlg.show();
+
+
+// ProgreesDialog 제거.
+if( pdlg !=null ){
+    pdlg.dismiss();
+    pdlg = null;
+}
+
+
+
+// intent 얻기
+Intent i = getIntent(); // SecondActiviy에서 넘겨준 값
+int sum = i.getIntExtra("sum", 0);
+
+
+// Notification 발생하는 코드
+CharSequence contextTitle = "new message";
+CharSequence contextText = "welcome to an android world";
+
+Context context = getApplicationContext();
+Intent notifyIntent = new Intent(getApplicationContext(), NotificationActivity.class);
+PendingIntent ci = PendingIntent.getActivity(getApplicationContext(), 0, notifyIntent, 0);
+Notification noti = new Notification.Builder(context)
+                                    .setContentTitle(contextTitle)
+                                    .setContentText(contextText)
+                                    .setSmallIcon(R.drawable.wikibooks_logo_trans)
+                                    .setContentIntent(ci)
+                                    //.setLargeIcon(aBitmap)
+                                    .build();
+
+NotificationManager nm = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+nm.notify(1, noti); 
+

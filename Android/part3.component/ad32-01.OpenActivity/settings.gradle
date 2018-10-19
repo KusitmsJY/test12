@@ -1,0 +1,1 @@
+include ':st1StartActivity', ':st2Intro', ':st3SendData', ':st5StartActivityForResult'

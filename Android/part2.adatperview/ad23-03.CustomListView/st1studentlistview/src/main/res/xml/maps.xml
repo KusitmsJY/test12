@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<thisIsMyMap>
+    <entry key="sname">이름</entry>
+    <entry key="sid"  >학번</entry>
+    <entry key="sdept">학과</entry>
+</thisIsMyMap>
