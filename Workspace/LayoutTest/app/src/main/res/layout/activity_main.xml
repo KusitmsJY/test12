@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fbf2e3"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        />
+
+    <com.kakao.usermgmt.LoginButton
+        android:id="@+id/kakaobutton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="카카오계정 로그인"
+        android:background="#f4c40f"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:onClick="onKakaoButtonClicked"/>
+
+    <Button
+        android:id="@+id/google_login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="구글 계정 로그인"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        android:onClick="onGoogleButtonClicked"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|right"
+        android:text="Trois-Jumper"
+        />
+
+</LinearLayout>
