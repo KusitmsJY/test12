@@ -51,7 +51,8 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.On
     private FirebaseAuth mAuth;
     private EditText editTextEmail;
     private EditText editTextPassword;
-
+    //리스너생성
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.On
                 .build();
         mAuth = FirebaseAuth.getInstance();
 
+
 // Configure Google Sign In
 
         SignInButton btn_login = (SignInButton) findViewById(R.id.sign_in_button);
@@ -86,57 +88,89 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.On
         editTextEmail = (EditText) findViewById(R.id.editext_email);
         editTextPassword = (EditText) findViewById(R.id.editext_passward);
 
-        Button emailbtn = (Button)findViewById(R.id.email_login_btn);
+        Button emailbtn = (Button) findViewById(R.id.email_login_btn);
         emailbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createUser(editTextEmail.getText().toString(),editTextPassword.getText().toString());
+                createUser(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+
             }
         });
+
+
+        // 로그인부분.
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    //user is signed in
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    //user is signed out
+                }
+            }
+        };
+
 
     }//end onCreate.
 
     //이메일관련
-    private void createUser(String email, String password) {
+    private void createUser(final String email, final String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(MainActivity.this, "회원가입성공", Toast.LENGTH_SHORT).show();
-
+                        if (!task.isSuccessful()) {
+                            LoginUser(email, password);
                         } else {
-
+                            Toast.makeText(MainActivity.this, " 이메일 로그인 완료", Toast.LENGTH_SHORT).show();
 
                         }
 
                         // ...
                     }
                 });
+    }//end createUser
+
+    private void LoginUser(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "이메일 로그인 완료", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                });
     }
+
 
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        mAuth.addAuthStateListener(mAuthListener);
 
     }
 
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-
-    public void onClick(View v) {
-        int i = v.getId();
-        if (i == R.id.sign_in_button) {
-            signIn();
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
         }
+
     }
 
 
@@ -150,7 +184,7 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.On
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "실패", Toast.LENGTH_SHORT).show();
+
                         } else {
                             Toast.makeText(MainActivity.this, "성공", Toast.LENGTH_SHORT).show();
                         }
@@ -161,7 +195,6 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.On
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
