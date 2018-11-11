@@ -1,0 +1,4 @@
+#Tue Oct 09 17:11:58 GMT+09:00 2018
+base.0=C\:\\Users\\JY\\Documents\\GitHub\\test12\\Workspace\\App\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\27
+path.0=classes.dex
+renamed.0=classes.dex
